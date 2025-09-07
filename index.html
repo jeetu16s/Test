@@ -1,15 +1,282 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Awesome Website</title>
+    <title>Indie Game Developer</title>
     <style>
-        body { font-family: sans-serif; text-align: center; padding-top: 50px; }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #000000;
+            animation: breathe 10s ease-in-out infinite;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        @keyframes breathe {
+
+            0%,
+            100% {
+                background-color: #000000;
+            }
+
+            50% {
+                background-color: #1a1a1a;
+            }
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 0;
+            animation: fadeInDown 1s ease-in-out;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin: 0;
+            letter-spacing: 2px;
+            color: #ff8c00;
+        }
+
+        header p {
+            font-size: 1.2em;
+            color: #aaaaaa;
+        }
+
+        .section {
+            padding: 40px 0;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        .section h2 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            position: relative;
+            color: #ff8c00;
+        }
+
+        .section h2::after {
+            content: '';
+            width: 60px;
+            height: 4px;
+            color: #ff8c00;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -10px;
+        }
+
+        .game-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .game-card {
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .game-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .game-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .game-card-content {
+            padding: 20px;
+        }
+
+        .game-card-content h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.5em;
+        }
+
+        .game-card-content p {
+            color: #aaaaaa;
+            font-size: 1em;
+        }
+
+        .play-store-link {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .play-store-link a {
+            display: inline-block;
+            background-color: #ff8c00;
+            color: #ffffff;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 1.2em;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .play-store-button-container {
+            padding: 0 20px 20px;
+        }
+
+        .play-store-button {
+            display: block;
+            background-color: #ff8c00;
+            color: #ffffff;
+            padding: 10px 15px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 1em;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .play-store-button:hover {
+            background-color: #cc7000;
+        }
+
+        .about-me {
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+            border-top: 1px solid #333333;
+        }
+
+        .social-links a {
+            color: #ffffff;
+            margin: 0 15px;
+            font-size: 1.5em;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #ff8c00;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
+
 <body>
-    <h1>Hello from my GitHub Page!</h1>
-    <p>This website is hosted for free on GitHub.</p>
+
+    <div class="container">
+        <header>
+            <h1>Indie Game Developer</h1>
+            <p>Creating unique and engaging mobile games.</p>
+        </header>
+
+        <section id="games" class="section">
+            <h2>My Games</h2>
+            <div class="game-gallery">
+                <div class="game-card">
+                    <img src="https://play-lh.googleusercontent.com/-xkRp1Fv3W0bnJG3gYn4d-to_Zd31vDvTHGRYkpTqd-GJMhjfvfR1h7lCINhBOhblIUh=w480-h960"
+                        alt="2048 Classic">
+                    <div class="game-card-content">
+                        <h3>2048 Classic: Endless 2D Game</h3>
+                        <p>A classic 2048 puzzle game with a clean and simple design. Swipe to move the tiles and merge
+                            them to reach the 2048 tile.</p>
+                    </div>
+                    <div class="play-store-button-container">
+                        <a href="https://play.google.com/store/apps/details?id=com.fourzerotwo.eight"
+                            class="play-store-button" target="_blank">View on Play Store</a>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <img src="https://via.placeholder.com/300x200.png?text=Game+2" alt="Game 2">
+                    <div class="game-card-content">
+                        <h3>Upcoming Game</h3>
+                        <p>A short description of the second game. What is the core mechanic?</p>
+                    </div>
+                    <div class="play-store-button-container">
+                        <a href="#" class="play-store-button" target="_blank">View on Play Store</a>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <img src="https://via.placeholder.com/300x200.png?text=Game+3" alt="Game 3">
+                    <div class="game-card-content">
+                        <h3>Upcoming Game</h3>
+                        <p>A short description of the third game. What is the story?</p>
+                    </div>
+                    <div class="play-store-button-container">
+                        <a href="#" class="play-store-button" target="_blank">View on Play Store</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="play-store-link">
+            <a href="https://play.google.com/store/apps/dev?id=7778710749891747322" target="_blank">View My Games on
+                Google Play</a>
+        </div>
+
+        <section id="about" class="section">
+            <h2>About Me</h2>
+            <div class="about-me">
+                <p>My name is Abhijeet and I am passionate about creating games in my free time. I specialize in mobile
+                    games and have a strong background in game design and development. My goal is to create memorable
+                    experiences for players around the world.</p>
+            </div>
+        </section>
+
+        <footer>
+            <div class="social-links">
+                <a href="#" target="_blank">Twitter</a>
+                <a href="#" target="_blank">LinkedIn</a>
+                <a href="#" target="_blank">GitHub</a>
+            </div>
+            <p>&copy; 2025 Indie Game Developer. All Rights Reserved.</p>
+        </footer>
+    </div>
+
 </body>
+
 </html>
